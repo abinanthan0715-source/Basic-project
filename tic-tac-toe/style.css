@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #e3f2fd, #fce4ec);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  background: white;
+  padding: 30px 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.score-box {
+  background: #f4f4f4;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  min-width: 140px;
+}
+
+#status {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.board {
+  width: 315px;
+  margin: 0 auto 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 7px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: #ffffff;
+  border: 2px solid #444;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 42px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.cell:hover {
+  background: #f1f8ff;
+  transform: scale(1.03);
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background: #1976d2;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #125ea7;
+}

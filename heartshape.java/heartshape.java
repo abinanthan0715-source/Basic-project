@@ -6,14 +6,11 @@ import java.awt.geom.PathIterator;
 import java.awt.geom.AffineTransform;
 
 public class heartshape extends JPanel {
-
-    int currentLetter = 0; // which letter is currently being drawn
-    double t = 0;           // progress along current letter path
+    int currentLetter = 0; 
+    double t = 0;           
     String name = "Abinanthan";
     Path2D[] letterPaths;
     int[] letterPointsCount;
-
-    // Fields for cracker animation
     boolean showCracker = false;
     int crackerSize = 0;
 
@@ -26,11 +23,10 @@ public class heartshape extends JPanel {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
 
-        // Black background
         g2.setColor(Color.BLACK);
         g2.fillRect(0, 0, getWidth(), getHeight());
 
-        g2.setColor(new Color(144, 238, 144)); // light green letters
+        g2.setColor(new Color(144, 238, 144)); // greencolor
         g2.setStroke(new BasicStroke(3));
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
@@ -61,7 +57,6 @@ public class heartshape extends JPanel {
                 letterPointsCount[i] = count;
             }
 
-            // Draw letter
             PathIterator it = letterPaths[i].getPathIterator(null, 0.5);
             double[] coords = new double[6];
             double drawn = 0;
@@ -90,7 +85,6 @@ public class heartshape extends JPanel {
             xOffset += g2.getFontMetrics().charWidth(c) + 20;
         }
 
-        // Draw cracker animation
         if (showCracker) {
             g2.setColor(Color.ORANGE);
             g2.setStroke(new BasicStroke(2));
@@ -104,12 +98,11 @@ public class heartshape extends JPanel {
                 g2.drawLine(centerX, centerY, x, y);
             }
 
-            if (crackerSize < 100) { // grow the explosion
+            if (crackerSize < 100) {
                 crackerSize++;
             }
         }
     }
-
     public static void main(String[] args) throws Exception {
         JFrame frame = new JFrame("Animated Name with Cracker");
         heartshape panel = new heartshape();
@@ -128,11 +121,11 @@ public class heartshape extends JPanel {
                     panel.currentLetter++;
                 }
             } else {
-                panel.showCracker = true; // start cracker animation
+                panel.showCracker = true; 
             }
-
             panel.repaint();
-            Thread.sleep(100); // controls smoothness
+            Thread.sleep(100);
         }
     }
+
 }
